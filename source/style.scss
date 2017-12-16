@@ -1,0 +1,100 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$primary-color: rgb(60, 90, 120);
+
+$header-height: 3rem;
+$tab-padding: 0 15px;
+
+body {
+  margin-bottom: $header-height;
+}
+
+//= HEADER =======================================
+
+#header {
+  height: $header-height;
+  background-color: $primary-color;
+  color: white;
+  font-size: 1.25rem;
+  .title {
+    margin-left: $grid-gutter-width / 2;
+    opacity: 0.8;
+  }
+}
+
+//= TABS =========================================
+
+.tabs-container {
+  padding-top: $grid-gutter-width;
+}
+
+.tabs {
+  margin: 0;
+  padding: 0;
+  border: solid 1px $primary-color;
+  font-size: 1.25rem;
+  list-style: none;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $header-height;
+  cursor: pointer;
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    line-height: $header-height;
+    text-decoration: none;
+  }
+  .start {
+    width: 100%;
+    padding: $tab-padding;
+  }
+  .hover {
+    width: 0%;
+    height: 100%;
+    background-color: $primary-color;
+    color: white;
+    overflow: hidden;
+    span {
+      margin: $tab-padding;
+    }
+  }
+  &:hover .hover {
+    width: 100%;
+    transition: width 0.5s ease-out;
+  }
+  &:not(:last-child) {
+    border-bottom: solid 1px $primary-color;
+  }
+}
+
+//= CONTENT ======================================
+
+.top {
+  margin-top: $grid-gutter-width - 5px;
+}
+
+.bottom {
+  margin-bottom: 0;
+}
+
+.entry {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background-color: #F5F5F5;
+  border: solid 1px #D4D4D4;
+  .description {
+    margin-top: 0.25rem;
+  }
+  &:first-of-type {
+    margin-top: 0.75rem;
+  }
+  &:last-of-type {
+    margin-bottom: 1rem;
+  }
+}

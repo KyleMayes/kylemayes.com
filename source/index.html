@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Kyle Mayes</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body class="d-flex flex-column">
+    <div id="header" class="d-flex align-items-center container-fluid">
+      <span class="brand">Kyle Mayes</span>
+      <span class="title">Software Developer</span>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="tabs-container sticky-top">
+            <ul class="tabs">
+              <% const tabs = ['Overview', 'Résumé', 'Projects', 'Contact']; %>
+              <% for (const tab of tabs) { %>
+                <% const href = tab.toLowerCase().replace(/\s/g, '-'); %>
+                <li class="tab">
+                  <a class="start" href="#<%= href %>"><%= tab %></a>
+                  <a class="hover" href="#<%= href %>"><span><%= tab %></span></a>
+                </li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <h2 id="overview" class="top">Overview</h2>
+          <p>
+            I am a software developer currently based in Atlanta, Georgia.<br>
+            Check out my history or some of my open source projects below!
+          </p>
+          <h2 id="résumé">Résumé</h2>
+          <p>
+            I have been programming for nearly ten years and have honed my skills both in the classroom and while
+            working on numerous personal projects, several of which I have released as open source software. My
+            experience has given me a comfortable command of both front-end and back-end technologies.
+          </p>
+          <h4>Core Technical Skills</h4>
+          <p>
+            <strong>Languages:</strong> C, C++, Rust, C&#9839;, Java, Python, JavaScript, TypeScript, CSS, HTML<br>
+            <strong>Technologies:</strong> Angular, Vue.js, Spring Boot, Microsoft SQL Server, Oracle RDBMS<br>
+            <strong>Operating systems:</strong> Linux, Windows<br>
+            <strong>Other:</strong> Git, command-line usage<br>
+          </p>
+          <h4>Education</h4>
+          <div>
+            <% for (const entry of education) { %>
+              <div class="entry">
+                <div class="d-flex">
+                  <span class="font-weight-bold"><%= entry.institution %></span>
+                  <span class="font-weight-bold ml-auto"><%= entry.location %></span>
+                </div>
+                <div class="d-flex">
+                  <span class="font-italic"><%= entry.degree %></span>
+                  <span class="font-italic ml-auto"><%= entry.start %> &ndash; <%= entry.end %></span>
+                </div>
+              </div>
+            <% } %>
+          </div>
+          <h4>Work</h4>
+          <div>
+            <% for (const entry of work) { %>
+              <div class="entry">
+                <div class="d-flex">
+                  <span class="font-weight-bold"><%= entry.company %></span>
+                  <span class="font-weight-bold ml-auto"><%= entry.location %></span>
+                </div>
+                <div class="d-flex">
+                  <span class="font-italic"><%= entry.position %></span>
+                  <span class="font-italic ml-auto"><%= entry.start %> &ndash; <%= entry.end %></span>
+                </div>
+                <div class="description"><%= entry.description %></div>
+              </div>
+            <% } %>
+          </div>
+          <h2 id="projects">Projects</h2>
+          <p>
+            For the full list of projects I have published, visit my
+            <a href="https://github.com/KyleMayes">GitHub profile</a>.
+          </p>
+          <div>
+            <% for (const entry of projects) { %>
+              <div class="entry">
+                <div class="d-flex">
+                  <span class="font-weight-bold"><%= entry.name %></span>&nbsp;<span>(<%= entry.language %>)</span>
+                  <a class="ml-auto" href="<%= entry.link %>"><%= entry.link %></a>
+                </div>
+                <div class="font-italic"><%= entry.blurb %></div>
+                <div class="description"><%= entry.description %></div>
+              </div>
+            <% } %>
+          </div>
+          <h2 id="contact">Contact</h2>
+          Email: <a href="mailto:kyle@mayeses.com">kyle@mayeses.com</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

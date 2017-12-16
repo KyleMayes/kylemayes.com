@@ -1,0 +1,59 @@
+{
+  "education": [
+    {
+      "institution": "Kennesaw State University",
+      "location": "Kennesaw, GA",
+      "degree": "College of Computing and Software Engineering, M.S. Computer Science",
+      "start": "2016",
+      "end": "2018 (expected)"
+    },
+    {
+      "institution": "Kennesaw State University",
+      "location": "Kennesaw, GA",
+      "degree": "College of the Arts, B.M. Music Performance",
+      "start": "2010",
+      "end": "2015"
+    }
+  ],
+  "work": [
+    {
+      "company": "United Parcel Service",
+      "location": "Alpharetta, GA",
+      "position": "Intern",
+      "start": "May 2017",
+      "end": "August 2017",
+      "description": "Worked with two other interns to design and implement a web application for internal use at UPS. Gathered requirements from the business team, assigned work amongst ourselves, and produced a working prototype which was well received by senior leadership."
+    },
+    {
+      "company": "United Parcel Service",
+      "location": "Alpharetta, GA",
+      "position": "Co-op",
+      "start": "August 2017",
+      "end": "Current",
+      "description": "Continued development of the web application I started working on as an intern, eventually deploying it into production. Fixed bugs and added features in preparation for a global release of the web application which will result in it being used by thousands of UPS employees."
+    }
+  ],
+  "projects": [
+    {
+      "name": "clang-sys",
+      "language": "Rust",
+      "link": "https://github.com/KyleMayes/clang-sys",
+      "blurb": "Rust bindings for libclang.",
+      "description": "Provides a set of Rust bindings to libclang, the C API for the Clang compiler."
+    },
+    {
+      "name": "clang-rs",
+      "language": "Rust",
+      "link": "https://github.com/KyleMayes/clang-rs",
+      "blurb": "A somewhat idiomatic Rust wrapper for libclang.",
+      "description": "Provides an easier-to-use wrapper around the raw C API exposed by clang-sys."
+    },
+    {
+      "name": "accelerando",
+      "language": "C++",
+      "link": "https://github.com/KyleMayes/accelerando",
+      "blurb": "A C++17 testing and benchmarking library.",
+      "description": "Provides simple and powerful mechanisms for writing tests and benchmarks."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "kylemayes.com",
+  "version": "1.0.0",
+  "description": "My personal website.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KyleMayes/kylemayes.com"
+  },
+  "bugs": {
+    "url": "https://github.com/KyleMayes/kylemayes.com/issues"
+  },
+  "devDependencies": {
+    "bootstrap": "~4.0.0-beta.2",
+    "gulp": "~3.9.1",
+    "gulp-csso": "~3.0.0",
+    "gulp-ejs": "~3.1.0",
+    "gulp-sass": "~3.1.0",
+    "gulp-watch": "~4.3.11"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch"
+  }
+}
