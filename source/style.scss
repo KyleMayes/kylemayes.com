@@ -1,12 +1,19 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 $background: rgb(60, 90, 120);
-$foreground: white;
+$foreground-primary: white;
+$foreground-secondary: #CCC;
 
 $header-height: 3rem;
+$footer-height: 2rem;
+
+html {
+  position: relative;
+  min-height: 100%;
+}
 
 body {
-  margin-bottom: $header-height;
+  margin-bottom: $footer-height * 2;
 }
 
 //= HEADER =======================================
@@ -14,11 +21,27 @@ body {
 header {
   height: $header-height;
   background-color: $background;
-  color: $foreground;
+  color: $foreground-primary;
   font-size: 1.25rem;
   .title {
     margin-left: $grid-gutter-width / 2;
     opacity: 0.75;
+  }
+}
+
+//= FOOTER =======================================
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: $footer-height;
+  background-color: $background;
+  color: $foreground-primary;
+  a {
+    color: $foreground-secondary;
+    &:hover {
+      color: $foreground-primary;
+    }
   }
 }
 
@@ -59,7 +82,7 @@ $tab-padding: 0 ($grid-gutter-width / 2);
     width: 0%;
     height: 100%;
     background-color: $background;
-    color: $foreground;
+    color: $foreground-primary;
     overflow: hidden;
     span {
       margin: $tab-padding;
