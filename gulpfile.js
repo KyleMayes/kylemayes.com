@@ -1,3 +1,4 @@
+const fs = require('fs');
 const gulp = require('gulp');
 const csso = require('gulp-csso');
 const ejs = require('gulp-ejs');
@@ -6,7 +7,7 @@ const util = require('gulp-util');
 
 gulp.task('build:html', () => {
   return gulp.src('./source/index.html')
-    .pipe(ejs(require('./source/index.json')).on('error', util.log))
+    .pipe(ejs(JSON.parse(fs.readFileSync('./source/index.json'))).on('error', util.log))
     .pipe(gulp.dest('./target'));
 });
 
