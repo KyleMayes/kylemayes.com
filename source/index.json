@@ -19,21 +19,28 @@
     {
       "company": "United Parcel Service",
       "location": "Alpharetta, GA",
-      "position": "Intern",
+      "position": "Intern / Co-op",
       "start": "May 2017",
-      "end": "August 2017",
-      "description": "Worked with two other interns to design and implement a web application for internal use at UPS. Gathered requirements from the business team, assigned work amongst ourselves, and produced a working prototype which was well received by senior leadership."
+      "end": "March 2018",
+      "description": "Worked with two other interns to design and implement a web application for internal use at UPS. Gathered requirements from the business team, assigned work amongst ourselves, and produced a working prototype which was well received by senior leadership. Continued development of this application on my own, eventually deploying it into production where it saw daily use by many UPS employees."
     },
     {
       "company": "United Parcel Service",
       "location": "Alpharetta, GA",
-      "position": "Co-op",
-      "start": "August 2017",
+      "position": "Software Developer I",
+      "start": "March 2018",
       "end": "Current",
-      "description": "Continued development of the web application I started working on as an intern, eventually deploying it into production. Fixed bugs and added features in preparation for a global release of the web application which will result in it being used by thousands of UPS employees."
+      "description": "Continued development on the web application I started as an intern, fixing bugs and adding many features in preparation for a global release. Gained experience in developing and supporting an application throughout the entire software development cycle."
     }
   ],
   "projects": [
+    {
+      "name": "otf",
+      "language": "Rust",
+      "link": "https://github.com/glyph-rs/otf",
+      "blurb": "A zero-allocation OpenType parser.",
+      "description": "Provides a parser for OpenType font files that does not require dynamic memory allocation."
+    },
     {
       "name": "clang-sys",
       "language": "Rust",
