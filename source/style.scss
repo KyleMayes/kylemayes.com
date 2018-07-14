@@ -1,9 +1,9 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-$primary-color: rgb(60, 90, 120);
+$background: rgb(60, 90, 120);
+$foreground: white;
 
 $header-height: 3rem;
-$tab-padding: 0 15px;
 
 body {
   margin-bottom: $header-height;
@@ -11,29 +11,30 @@ body {
 
 //= HEADER =======================================
 
-#header {
+header {
   height: $header-height;
-  background-color: $primary-color;
-  color: white;
+  background-color: $background;
+  color: $foreground;
   font-size: 1.25rem;
   .title {
     margin-left: $grid-gutter-width / 2;
-    opacity: 0.8;
+    opacity: 0.75;
   }
 }
 
 //= TABS =========================================
 
-.tabs-container {
-  padding-top: $grid-gutter-width;
-}
+$tab-padding: 0 ($grid-gutter-width / 2);
 
 .tabs {
-  margin: 0;
-  padding: 0;
-  border: solid 1px $primary-color;
-  font-size: 1.25rem;
-  list-style: none;
+  padding-top: $grid-gutter-width;
+  ul {
+    margin: 0;
+    padding: 0;
+    border: solid 1px $background;
+    font-size: 1.25rem;
+    list-style: none;
+  }
 }
 
 .tab {
@@ -57,8 +58,8 @@ body {
   .hover {
     width: 0%;
     height: 100%;
-    background-color: $primary-color;
-    color: white;
+    background-color: $background;
+    color: $foreground;
     overflow: hidden;
     span {
       margin: $tab-padding;
@@ -69,7 +70,7 @@ body {
     transition: width 0.5s ease-out;
   }
   &:not(:last-child) {
-    border-bottom: solid 1px $primary-color;
+    border-bottom: solid 1px $background;
   }
 }
 
@@ -77,10 +78,6 @@ body {
 
 .top {
   margin-top: $grid-gutter-width - 5px;
-}
-
-.bottom {
-  margin-bottom: 0;
 }
 
 .entry {
