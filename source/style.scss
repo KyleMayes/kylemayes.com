@@ -1,8 +1,10 @@
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/type";
 
 $background: rgb(60, 90, 120);
 $foreground-primary: white;
-$foreground-secondary: #CCC;
+$foreground-secondary: darken($foreground-primary, 12.5%);
 
 $header-height: 3rem;
 $footer-height: 2rem;
@@ -16,16 +18,22 @@ body {
   margin-bottom: $footer-height * 2;
 }
 
+.italic {
+  font-style: italic;
+}
+
 //= HEADER =======================================
 
 header {
+  display: flex;
+  align-items: center;
   height: $header-height;
   background-color: $background;
   color: $foreground-primary;
   font-size: 1.25rem;
   .title {
     margin-left: $grid-gutter-width / 2;
-    opacity: 0.75;
+    color: $foreground-secondary;
   }
 }
 
@@ -34,7 +42,11 @@ header {
 footer {
   position: absolute;
   bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: $footer-height;
+  padding-top: 0.125rem;
   background-color: $background;
   color: $foreground-primary;
   a {
@@ -43,6 +55,9 @@ footer {
       color: $foreground-primary;
     }
   }
+  .separator {
+    margin: 0 0.5rem;
+  }
 }
 
 //= TABS =========================================
@@ -50,6 +65,8 @@ footer {
 $tab-padding: 0 ($grid-gutter-width / 2);
 
 .tabs {
+  position: sticky;
+  top: 0;
   padding-top: $grid-gutter-width;
   ul {
     margin: 0;
@@ -70,13 +87,9 @@ $tab-padding: 0 ($grid-gutter-width / 2);
     position: absolute;
     top: 0;
     left: 0;
-    color: black;
+    color: $body-color;
     line-height: $header-height;
     text-decoration: none;
-  }
-  .start {
-    width: 100%;
-    padding: $tab-padding;
   }
   .hover {
     width: 0%;
@@ -87,6 +100,10 @@ $tab-padding: 0 ($grid-gutter-width / 2);
     span {
       margin: $tab-padding;
     }
+  }
+  .start {
+    width: 100%;
+    padding: $tab-padding;
   }
   &:hover .hover {
     width: 100%;
@@ -106,8 +123,13 @@ $tab-padding: 0 ($grid-gutter-width / 2);
 .entry {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
-  background-color: #F5F5F5;
-  border: solid 1px #D4D4D4;
+  padding-bottom: 0.3rem;
+  background-color: map-get($grays, "100");
+  border: solid 1px map-get($grays, "400");
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
   .description {
     margin-top: 0.25rem;
   }

@@ -6,15 +6,15 @@
     <link rel="icon" href="static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
-  <body class="d-flex flex-column">
-    <header class="d-flex align-items-center container-fluid">
-      <span class="brand">Kyle Mayes</span>
-      <span class="title">Software Developer</span>
+  <body>
+    <header class="container-fluid">
+      <div>Kyle Mayes</div>
+      <div class="title">Software Developer</div>
     </header>
     <div class="container">
       <div class="row">
         <div class="col-lg-3">
-          <nav class="tabs sticky-top">
+          <nav class="tabs">
             <ul>
               <% const tabs = ['Overview', 'Résumé', 'Projects', 'Contact']; %>
               <% for (const tab of tabs) { %>
@@ -48,13 +48,13 @@
           <div>
             <% for (const entry of education) { %>
               <div class="entry">
-                <div class="d-flex">
-                  <span class="font-weight-bold"><%= entry.institution %></span>
-                  <span class="font-weight-bold ml-auto"><%= entry.location %></span>
+                <div>
+                  <strong><%= entry.institution %></strong>
+                  <strong><%= entry.location %></strong>
                 </div>
-                <div class="d-flex">
-                  <span class="font-italic"><%= entry.degree %></span>
-                  <span class="font-italic ml-auto text-right"><%= entry.start %> &ndash; <%= entry.end %></span>
+                <div>
+                  <div class="italic"><%= entry.degree %></div>
+                  <div class="italic"><%= entry.start %> &ndash; <%= entry.end %></div>
                 </div>
               </div>
             <% } %>
@@ -63,13 +63,13 @@
           <div>
             <% for (const entry of work) { %>
               <div class="entry">
-                <div class="d-flex">
-                  <span class="font-weight-bold"><%= entry.company %></span>
-                  <span class="font-weight-bold ml-auto"><%= entry.location %></span>
+                <div>
+                  <strong><%= entry.company %></strong>
+                  <strong><%= entry.location %></strong>
                 </div>
-                <div class="d-flex">
-                  <span class="font-italic"><%= entry.position %></span>
-                  <span class="font-italic ml-auto"><%= entry.start %> &ndash; <%= entry.end %></span>
+                <div>
+                  <div class="italic"><%= entry.position %></div>
+                  <div class="italic"><%= entry.start %> &ndash; <%= entry.end %></div>
                 </div>
                 <div class="description"><%= entry.description %></div>
               </div>
@@ -83,11 +83,11 @@
           <div>
             <% for (const entry of projects) { %>
               <div class="entry">
-                <div class="d-flex">
-                  <span class="font-weight-bold"><%= entry.name %></span>&nbsp;<span>(<%= entry.language %>)</span>
-                  <a class="ml-auto" href="<%= entry.link %>"><%= entry.link %></a>
+                <div>
+                  <div><strong><%= entry.name %></strong>&nbsp;(<%= entry.language %>)</div>
+                  <a href="<%= entry.link %>"><%= entry.link %></a>
                 </div>
-                <div class="font-italic"><%= entry.blurb %></div>
+                <div class="italic"><%= entry.blurb %></div>
                 <div class="description"><%= entry.description %></div>
               </div>
             <% } %>
@@ -97,9 +97,9 @@
         </div>
       </div>
     </div>
-    <footer class="d-flex justify-content-center align-items-center container-fluid">
+    <footer class="container-fluid">
       <div>Source on <a href="https://github.com/KyleMayes/kylemayes.com">GitHub</a></div>
-      <div class="mx-2">|</div>
+      <div class="separator">|</div>
       <div>Hosted on <a href="https://www.netlify.com">Netlify</a></div>
     </footer>
   </body>
