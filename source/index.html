@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="description" content="Kyle Mayes: Software Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kyle Mayes</title>
     <link rel="icon" href="static/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -48,13 +50,13 @@
           <div>
             <% for (const entry of education) { %>
               <div class="entry">
-                <div>
-                  <strong><%= entry.institution %></strong>
-                  <strong><%= entry.location %></strong>
+                <div class="row">
+                  <strong class="col-sm"><%= entry.institution %></strong>
+                  <strong class="col-sm-auto"><%= entry.location %></strong>
                 </div>
-                <div>
-                  <div class="italic"><%= entry.degree %></div>
-                  <div class="italic"><%= entry.start %> &ndash; <%= entry.end %></div>
+                <div class="row">
+                  <div class="col-sm italic"><%= entry.degree %></div>
+                  <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
                 </div>
               </div>
             <% } %>
@@ -63,13 +65,13 @@
           <div>
             <% for (const entry of work) { %>
               <div class="entry">
-                <div>
-                  <strong><%= entry.company %></strong>
-                  <strong><%= entry.location %></strong>
+                <div class="row">
+                  <strong class="col-sm"><%= entry.company %></strong>
+                  <strong class="col-sm-auto"><%= entry.location %></strong>
                 </div>
-                <div>
-                  <div class="italic"><%= entry.position %></div>
-                  <div class="italic"><%= entry.start %> &ndash; <%= entry.end %></div>
+                <div class="row">
+                  <div class="col-sm italic"><%= entry.position %></div>
+                  <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
                 </div>
                 <div class="description"><%= entry.description %></div>
               </div>
@@ -83,9 +85,9 @@
           <div>
             <% for (const entry of projects) { %>
               <div class="entry">
-                <div>
-                  <div><strong><%= entry.name %></strong>&nbsp;(<%= entry.language %>)</div>
-                  <a href="<%= entry.link %>"><%= entry.link %></a>
+                <div class="row">
+                  <div class="col-sm"><strong><%= entry.name %></strong>&nbsp;(<%= entry.language %>)</div>
+                  <a class="col-sm-auto" href="<%= entry.link %>"><%= entry.link %></a>
                 </div>
                 <div class="italic"><%= entry.blurb %></div>
                 <div class="description"><%= entry.description %></div>
