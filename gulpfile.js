@@ -18,7 +18,12 @@ gulp.task('build:scss', () => {
     .pipe(gulp.dest('./target'));
 });
 
-gulp.task('build', ['build:html', 'build:scss']);
+gulp.task('build:static', () => {
+  return gulp.src('./static/**/*')
+    .pipe(gulp.dest('./target/static'));
+});
+
+gulp.task('build', ['build:html', 'build:scss', 'build:static']);
 
 gulp.task('watch', ['build'], () => {
   return gulp.watch('./source/**/*', ['build']);
