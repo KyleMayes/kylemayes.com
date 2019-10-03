@@ -3,11 +3,10 @@ const gulp = require('gulp');
 const csso = require('gulp-csso');
 const ejs = require('gulp-ejs');
 const sass = require('gulp-sass');
-const util = require('gulp-util');
 
 gulp.task('build:html', () => {
   return gulp.src('./source/index.html')
-    .pipe(ejs(JSON.parse(fs.readFileSync('./source/index.json'))).on('error', util.log))
+    .pipe(ejs(JSON.parse(fs.readFileSync('./source/index.json'))).on('error', console.error))
     .pipe(gulp.dest('./target'));
 });
 
@@ -23,8 +22,10 @@ gulp.task('build:static', () => {
     .pipe(gulp.dest('./target/static'));
 });
 
-gulp.task('build', ['build:html', 'build:scss', 'build:static']);
+gulp.task('build', gulp.parallel('build:html', 'build:scss', 'build:static'));
 
-gulp.task('watch', ['build'], () => {
-  return gulp.watch('./source/**/*', ['build']);
-});
+function watch() {
+  return gulp.watch('./source/**/*', gulp.series('build'));
+}
+
+gulp.task('watch', gulp.series('build', watch));
