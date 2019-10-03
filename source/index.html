@@ -18,7 +18,7 @@
         <div class="col-lg-3">
           <nav class="tabs">
             <ul>
-              <% const tabs = ['Overview', 'Résumé', 'Projects', 'Contact']; %>
+              <% const tabs = ['Overview', 'Résumé', 'Projects']; %>
               <% for (const tab of tabs) { %>
                 <% const href = tab.toLowerCase().replace(/\s/g, '-'); %>
                 <li class="tab">
@@ -31,21 +31,14 @@
         </div>
         <div class="col-lg-9">
           <h2 id="overview" class="top">Overview</h2>
+          <p>I am a software developer currently based in Atlanta, Georgia.</p>
+          <h4>Online Presence</h4>
           <p>
-            I am a software developer currently based in Atlanta, Georgia.
+            Connect with me on <a href="https://www.linkedin.com/in/kyle-mayes-4521b057">LinkedIn</a>.
+            <br/>
+            See all of my open source projects on <a href="https://github.com/KyleMayes">GitHub</a>.
           </p>
           <h2 id="résumé">Résumé</h2>
-          <p>
-            I have been programming for nearly ten years and have honed my skills in the classroom, while working on
-            numerous personal projects, and as a professional software developer. My experience has given me a
-            comfortable command of both front-end and back-end technologies.
-          </p>
-          <h4>Core Technical Skills</h4>
-          <p>
-            <strong>Languages:</strong> C, C++, Rust, C&#9839;, Java, Python, JavaScript, TypeScript, CSS, HTML, SQL<br>
-            <strong>Technologies:</strong> Angular, Vue.js<br>
-            <strong>Other:</strong> Git, command-line usage<br>
-          </p>
           <h4>Education</h4>
           <div>
             <% for (const entry of education) { %>
@@ -61,6 +54,12 @@
               </div>
             <% } %>
           </div>
+          <h4>Core Technical Skills</h4>
+          <p>
+            <strong>Languages:</strong> C, C++, Rust, C&#9839;, Java, Python, JavaScript, TypeScript, SQL, CSS, HTML<br>
+            <strong>Databases:</strong> SQL Server<br>
+            <strong>Frameworks:</strong> Angular, React, VueJS, Spring, Spring Boot<br>
+          </p>
           <h4>Work</h4>
           <div>
             <% for (const entry of work) { %>
@@ -69,19 +68,21 @@
                   <strong class="col-sm"><%= entry.company %></strong>
                   <strong class="col-sm-auto"><%= entry.location %></strong>
                 </div>
-                <div class="row">
-                  <div class="col-sm italic"><%= entry.position %></div>
-                  <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
-                </div>
-                <div class="description"><%= entry.description %></div>
+                <% for (const title of entry.titles) { %>
+                  <div class="row">
+                    <div class="col-sm italic"><%= title.position %></div>
+                    <div class="col-sm-auto"><%= title.start %> &ndash; <%= title.end %></div>
+                  </div>
+                <% } %>
+                <ul class="description">
+                  <% for (const bullet of entry.description) { %>
+                    <li><%- bullet %></li>
+                  <% } %>
+                </ul>
               </div>
             <% } %>
           </div>
-          <h2 id="projects">Projects</h2>
-          <p>
-            For the full list of projects I have published, visit my
-            <a href="https://github.com/KyleMayes">GitHub profile</a>.
-          </p>
+          <h2 id="projects">Open Source Projects</h2>
           <div>
             <% for (const entry of projects) { %>
               <div class="entry">
@@ -89,13 +90,14 @@
                   <div class="col-sm"><strong><%= entry.name %></strong>&nbsp;(<%= entry.language %>)</div>
                   <a class="col-sm-auto" href="<%= entry.link %>"><%= entry.link %></a>
                 </div>
-                <div class="italic"><%= entry.blurb %></div>
-                <div class="description"><%= entry.description %></div>
+                <ul class="description">
+                  <% for (const bullet of entry.description) { %>
+                    <li><%- bullet %></li>
+                  <% } %>
+                </ul>
               </div>
             <% } %>
           </div>
-          <h2 id="contact">Contact</h2>
-          Email: <a href="mailto:kyle@mayeses.com">kyle@mayeses.com</a>
         </div>
       </div>
     </div>

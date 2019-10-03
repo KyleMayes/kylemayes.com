@@ -127,7 +127,8 @@ $tab-padding: 0 ($grid-gutter-width / 2);
   background-color: map-get($grays, "100");
   border: solid 1px map-get($grays, "400");
   .description {
-    margin-top: 0.25rem;
+    margin: 0.2rem 0 0.15rem 0;
+    padding-left: 1.25rem;
   }
   &:first-of-type {
     margin-top: 0.75rem;
