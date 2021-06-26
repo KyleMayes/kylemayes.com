@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "../node_modules/bootstrap/scss/bootstrap-reboot";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/type";
@@ -32,7 +34,7 @@ header {
   color: $foreground-primary;
   font-size: 1.25rem;
   .title {
-    margin-left: $grid-gutter-width / 2;
+    margin-left: math.div($grid-gutter-width, 2);
     color: $foreground-secondary;
   }
 }
@@ -62,7 +64,7 @@ footer {
 
 //= TABS =========================================
 
-$tab-padding: 0 ($grid-gutter-width / 2);
+$tab-padding: 0 math.div($grid-gutter-width, 2);
 
 .tabs {
   position: sticky;
