@@ -17,32 +17,28 @@
   ],
   "work": [
     {
-      "company": "United Parcel Service",
+      "company": "Slalom Consulting",
+      "location": "Atlanta, GA",
+      "titles": [
+        {
+          "position": "Consultant",
+          "start": "December 2019",
+          "end": "Current"
+        }
+      ],
+      "description": "I leveraged a variety of technologies to help solve problems our clients were facing. I further developed my command of front-end and back-end technologies, gained new experience with cloud computing, and improved my communication and teamwork skills."
+    },
+    {
+      "company": "United Parcel Service (UPS)",
       "location": "Alpharetta, GA",
       "titles": [
         {
           "position": "Applications Developer",
-          "start": "June 2019",
-          "end": "Current"
+          "start": "March 2018",
+          "end": "December 2019"
         },
         {
-          "position": "Software Developer II",
-          "start": "March 2019",
-          "end": "June 2019"
-        }
-      ],
-      "description": [
-        "Helped design and implement an integration platform for sending UPS data to a vendor system",
-        "Worked on a team and frequently assisted other developers with their tasks",
-        "Introduced some best practices such as continuous integration and code review"
-      ]
-    },
-    {
-      "company": "United Parcel Service",
-      "location": "Alpharetta, GA",
-      "titles": [
-        {
-          "position": "Software Developer I",
+          "position": "Software Developer I / II",
           "start": "March 2018",
           "end": "March 2019"
         },
@@ -52,12 +48,16 @@
           "end": "March 2018"
         }
       ],
-      "description": [
-        "Worked with a business team to design a new web application to be used by UPS employees",
-        "Developed and deployed the web application while mostly working independently",
-        "Gained experience in full-stack development using Angular, Java, and SQL Server",
-        "Supported the web application as it expanded to be used by thousands of UPS employees"
-      ]
+      "description": "Working as the sole software developer on a team I designed, implemented, and supported an internal business application that was used by thousands of UPS employees globally. This application supported these employees to provide a higher level of customer service and resulted in millions of dollars of additional revenue just in the first year of limited roll out."
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Associate Cloud Engineer",
+      "source": "Google Cloud Platform",
+      "start": "February 2020",
+      "end": "February 2022",
+      "description": " An Associate Cloud Engineer deploys applications, monitors operations, and manages enterprise solutions. This individual is able to use Google Cloud Console and the command-line interface to perform common platform-based tasks to maintain one or more deployed solutions that leverage Google-managed or self-managed services on Google Cloud."
     }
   ],
   "projects": [
@@ -71,21 +71,11 @@
       ]
     },
     {
-      "name": "npnc",
-      "language": "Rust",
-      "link": "https://github.com/KyleMayes/npnc",
+      "name": "eslint-plugin-ordered-imports",
+      "language": "TypeScript",
+      "link": "https://github.com/KyleMayes/eslint-plugin-ordered-imports",
       "description": [
-        "Provides implementations of several types of lock-free queues",
-        "Allows for efficient communication between threads for a variety of use cases"
-      ]
-    },
-    {
-      "name": "microbench",
-      "language": "Rust",
-      "link": "https://github.com/KyleMayes/microbench",
-      "description": [
-        "Provides facilities for benchmarking Rust code",
-        "Uses statistical methods that allow for accurate and stable benchmarks"
+        "Provides an ESLint plugin which enforces customizable import ordering rules"
       ]
     }
   ]
