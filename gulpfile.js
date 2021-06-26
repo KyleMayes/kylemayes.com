@@ -2,7 +2,7 @@ const fs = require('fs');
 const gulp = require('gulp');
 const csso = require('gulp-csso');
 const ejs = require('gulp-ejs');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 
 gulp.task('build:html', () => {
   return gulp.src('./source/index.html')
