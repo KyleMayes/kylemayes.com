@@ -1,8 +1,6 @@
 @use "sass:math";
 
-@import "../node_modules/bootstrap/scss/bootstrap-reboot";
-@import "../node_modules/bootstrap/scss/grid";
-@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 $background: rgb(60, 90, 120);
 $foreground-primary: white;
@@ -18,10 +16,6 @@ html {
 
 body {
   margin-bottom: $footer-height * 2;
-}
-
-.italic {
-  font-style: italic;
 }
 
 //= HEADER =======================================
@@ -48,7 +42,7 @@ footer {
   align-items: center;
   justify-content: center;
   height: $footer-height;
-  padding-top: 0.125rem;
+  padding: 0 0.125rem;
   background-color: $background;
   color: $foreground-primary;
   a {
@@ -119,7 +113,7 @@ $tab-padding: 0 math.div($grid-gutter-width, 2);
 //= CONTENT ======================================
 
 .top {
-  margin-top: $grid-gutter-width - 5px;
+  margin-top: calc(#{$grid-gutter-width} - 5px);
 }
 
 .entry {
