@@ -13,102 +13,84 @@
       <div>Kyle Mayes</div>
       <div class="title">Software Developer</div>
     </header>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <nav class="tabs">
-            <ul>
-              <% const tabs = ['Overview', 'Résumé', 'Projects']; %>
-              <% for (const tab of tabs) { %>
-                <% const href = tab.toLowerCase().replace(/\s/g, '-'); %>
-                <li class="tab">
-                  <a class="start" href="#<%= href %>"><%= tab %></a>
-                  <a class="hover" href="#<%= href %>"><span><%= tab %></span></a>
-                </li>
+    <main class="container">
+      <h2 id="overview" class="top">Overview</h2>
+      <p>I am a software developer based in Atlanta, Georgia.</p>
+      <h4>Online Presence</h4>
+      <p>
+        Connect with me on <a href="https://www.linkedin.com/in/kyle-mayes-4521b057">LinkedIn</a>.
+        <br/>
+        See all of my open source projects on <a href="https://github.com/KyleMayes">GitHub</a>.
+      </p>
+      <h2 id="résumé">Résumé</h2>
+      <h4>Education</h4>
+      <div>
+        <% for (const entry of education) { %>
+          <div class="entry">
+            <div class="row">
+              <strong class="col-sm"><%= entry.institution %></strong>
+              <strong class="col-sm-auto"><%= entry.location %></strong>
+            </div>
+            <div class="row">
+              <div class="col-sm fst-italic"><%= entry.degree %></div>
+              <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
+            </div>
+          </div>
+        <% } %>
+      </div>
+      <h4>Core Technical Skills</h4>
+      <p>
+        <strong>Languages:</strong> C, C++, Rust, C&#9839;, Java, Python, JavaScript, TypeScript, SQL, CSS, HTML<br>
+        <strong>Databases:</strong> PostgreSQL, SQL Server, Firestore<br>
+        <strong>Frameworks:</strong> Angular, React, VueJS, Spring, Spring Boot<br>
+        <strong>Other:</strong> Docker, Google Cloud Platform<br>
+      </p>
+      <h4>Work Experience</h4>
+      <div>
+        <% for (const entry of work) { %>
+          <div class="entry">
+            <div class="row">
+              <strong class="col-sm"><%= entry.company %></strong>
+              <strong class="col-sm-auto"><%= entry.location %></strong>
+            </div>
+            <% for (const title of entry.titles) { %>
+              <div class="row">
+                <div class="col-sm fst-italic"><%= title.position %></div>
+                <div class="col-sm-auto"><%= title.start %> &ndash; <%= title.end %></div>
+              </div>
+            <% } %>
+            <div class="description"><%= entry.description %></div>
+          </div>
+        <% } %>
+      </div>
+      <h4>Certifications</h4>
+      <div>
+        <% for (const entry of certifications) { %>
+          <div class="entry">
+            <strong class="col-sm"><%= entry.name %></strong>
+            <div class="row">
+              <div class="col-sm fst-italic"><%= entry.source %></div>
+              <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
+            </div>
+            <div class="description"><%= entry.description %></div>
+          </div>
+        <% } %>
+      </div>
+      <h4>Open Source Projects</h4>
+      <div>
+        <% for (const entry of projects) { %>
+          <div class="entry">
+            <div class="col-sm"><strong><a href="<%= entry.link %>"><%= entry.name %></a></strong>&nbsp;(<%= entry.language %>)</div>
+            <ul class="description-list">
+              <% for (const bullet of entry.description) { %>
+                <li><%- bullet %></li>
               <% } %>
             </ul>
-          </nav>
-        </div>
-        <div class="col-lg-9">
-          <h2 id="overview" class="top">Overview</h2>
-          <p>I am a software developer based in Atlanta, Georgia.</p>
-          <h4>Online Presence</h4>
-          <p>
-            Connect with me on <a href="https://www.linkedin.com/in/kyle-mayes-4521b057">LinkedIn</a>.
-            <br/>
-            See all of my open source projects on <a href="https://github.com/KyleMayes">GitHub</a>.
-          </p>
-          <h2 id="résumé">Résumé</h2>
-          <h4>Education</h4>
-          <div>
-            <% for (const entry of education) { %>
-              <div class="entry">
-                <div class="row">
-                  <strong class="col-sm"><%= entry.institution %></strong>
-                  <strong class="col-sm-auto"><%= entry.location %></strong>
-                </div>
-                <div class="row">
-                  <div class="col-sm fst-italic"><%= entry.degree %></div>
-                  <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
-                </div>
-              </div>
-            <% } %>
           </div>
-          <h4>Core Technical Skills</h4>
-          <p>
-            <strong>Languages:</strong> C, C++, Rust, C&#9839;, Java, Python, JavaScript, TypeScript, SQL, CSS, HTML<br>
-            <strong>Databases:</strong> PostgreSQL, SQL Server, Firestore<br>
-            <strong>Frameworks:</strong> Angular, React, VueJS, Spring, Spring Boot<br>
-            <strong>Other:</strong> Docker, Google Cloud Platform<br>
-          </p>
-          <h4>Work Experience</h4>
-          <div>
-            <% for (const entry of work) { %>
-              <div class="entry">
-                <div class="row">
-                  <strong class="col-sm"><%= entry.company %></strong>
-                  <strong class="col-sm-auto"><%= entry.location %></strong>
-                </div>
-                <% for (const title of entry.titles) { %>
-                  <div class="row">
-                    <div class="col-sm fst-italic"><%= title.position %></div>
-                    <div class="col-sm-auto"><%= title.start %> &ndash; <%= title.end %></div>
-                  </div>
-                <% } %>
-                <div class="description"><%= entry.description %></div>
-              </div>
-            <% } %>
-          </div>
-          <h4>Certifications</h4>
-          <div>
-            <% for (const entry of certifications) { %>
-              <div class="entry">
-                <strong class="col-sm"><%= entry.name %></strong>
-                <div class="row">
-                  <div class="col-sm fst-italic"><%= entry.source %></div>
-                  <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
-                </div>
-                <div class="description"><%= entry.description %></div>
-              </div>
-            <% } %>
-          </div>
-          <h4>Open Source Projects</h4>
-          <div>
-            <% for (const entry of projects) { %>
-              <div class="entry">
-                <div class="col-sm"><strong><a href="<%= entry.link %>"><%= entry.name %></a></strong>&nbsp;(<%= entry.language %>)</div>
-                <ul class="description-list">
-                  <% for (const bullet of entry.description) { %>
-                    <li><%- bullet %></li>
-                  <% } %>
-                </ul>
-              </div>
-            <% } %>
-          </div>
-          Other open source projects I have written can be found on my <a href="https://github.com/KyleMayes">GitHub profile</a>.
-        </div>
+        <% } %>
       </div>
-    </div>
+      Other open source projects I have written can be found on my <a href="https://github.com/KyleMayes">GitHub profile</a>.
+    </main>
     <footer class="container-fluid">
       <div>Source on <a href="https://github.com/KyleMayes/kylemayes.com">GitHub</a></div>
       <div class="separator">|</div>

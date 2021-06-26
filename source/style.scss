@@ -112,6 +112,13 @@ $tab-padding: 0 math.div($grid-gutter-width, 2);
 
 //= CONTENT ======================================
 
+@media (min-width: 992px) {
+  main {
+    max-width: 960px !important;
+  }
+}
+
+
 .top {
   margin-top: calc(#{$grid-gutter-width} - 5px);
 }
