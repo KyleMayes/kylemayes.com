@@ -41,8 +41,8 @@
       <h4>Core Technical Skills</h4>
       <p>
         <strong>Languages:</strong> C, C++, Rust, C&#9839;, Java, Python, JavaScript, TypeScript, SQL, CSS, HTML<br>
-        <strong>Databases:</strong> PostgreSQL, SQL Server, Firestore<br>
-        <strong>Frameworks:</strong> Angular, React, VueJS, Spring, Spring Boot<br>
+        <strong>Databases:</strong> PostgreSQL, SQL Server<br>
+        <strong>Frameworks:</strong> Angular, React, VueJS, Spring Boot<br>
         <strong>Other:</strong> Docker, Google Cloud Platform<br>
       </p>
       <h4>Work Experience</h4>
@@ -72,7 +72,9 @@
               <div class="col-sm fst-italic"><%= entry.source %></div>
               <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
             </div>
-            <div class="description"><%= entry.description %></div>
+            <% if (entry.description) { %>
+              <div class="description"><%= entry.description %></div>
+            <% } %>
           </div>
         <% } %>
       </div>

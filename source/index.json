@@ -26,7 +26,7 @@
           "end": "Current"
         }
       ],
-      "description": "I leveraged a variety of technologies to help solve problems our clients were facing. I further developed my command of front-end and back-end technologies, gained new experience with cloud computing, and improved my communication and teamwork skills."
+      "description": "I leveraged a variety of technologies to help solve problems our clients were facing. I further developed my command of both front-end and back-end technologies, gained new experience with a variety of cloud services, and improved my communication and teamwork skills."
     },
     {
       "company": "United Parcel Service (UPS)",
@@ -56,26 +56,24 @@
       "name": "Associate Cloud Engineer",
       "source": "Google Cloud Platform",
       "start": "February 2020",
-      "end": "February 2022",
-      "description": " An Associate Cloud Engineer deploys applications, monitors operations, and manages enterprise solutions. This individual is able to use Google Cloud Console and the command-line interface to perform common platform-based tasks to maintain one or more deployed solutions that leverage Google-managed or self-managed services on Google Cloud."
+      "end": "February 2022"
     }
   ],
   "projects": [
-    {
-      "name": "clang-rs",
-      "language": "Rust",
-      "link": "https://github.com/KyleMayes/clang-rs",
-      "description": [
-        "Provides a Rust interface to <code>libclang</code> (the C API for the Clang compiler)",
-        "Allows for safer and more idiomatic usage of <code>libclang</code> from Rust"
-      ]
-    },
     {
       "name": "eslint-plugin-ordered-imports",
       "language": "TypeScript",
       "link": "https://github.com/KyleMayes/eslint-plugin-ordered-imports",
       "description": [
         "Provides an ESLint plugin which enforces customizable import ordering rules"
+      ]
+    },
+    {
+      "name": "vulkanalia",
+      "language": "Rust / Kotlin",
+      "link": "https://github.com/KyleMayes/vulkanalia",
+      "description": [
+        "Provides Rust bindings to Vulkan (the graphics and computing API)"
       ]
     }
   ]
