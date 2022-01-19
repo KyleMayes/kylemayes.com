@@ -59,7 +59,9 @@
                 <div class="col-sm-auto"><%= title.start %> &ndash; <%= title.end %></div>
               </div>
             <% } %>
-            <div class="description"><%= entry.description %></div>
+            <% if (entry.description) { %>
+              <div class="description"><%= entry.description %></div>
+            <% } %>
           </div>
         <% } %>
       </div>

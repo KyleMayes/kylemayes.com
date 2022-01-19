@@ -17,13 +17,24 @@
   ],
   "work": [
     {
+      "company": "Amazon",
+      "location": "Remote",
+      "titles": [
+        {
+          "position": "SDE I",
+          "start": "December 2021",
+          "end": "Current"
+        }
+      ]
+    },
+    {
       "company": "Slalom Consulting",
       "location": "Atlanta, GA",
       "titles": [
         {
           "position": "Consultant",
           "start": "December 2019",
-          "end": "Current"
+          "end": "December 2021"
         }
       ],
       "description": "I leveraged a variety of technologies to help solve problems our clients were facing. I further developed my command of both front-end and back-end technologies, gained new experience with a variety of cloud services, and improved my communication and teamwork skills."
