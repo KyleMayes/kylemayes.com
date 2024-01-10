@@ -40,10 +40,9 @@
       </div>
       <h4>Core Technical Skills</h4>
       <p>
-        <strong>Languages:</strong> C, C++, Rust, C&#9839;, Java, Python, JavaScript, TypeScript, SQL, CSS, HTML<br>
+        <strong>Languages:</strong> JavaScript, TypeScript, C&#9839;, Java, Python, C, C++, Rust, SQL, HTML, CSS<br>
         <strong>Databases:</strong> PostgreSQL, SQL Server<br>
-        <strong>Frameworks:</strong> Angular, React, VueJS, Spring Boot<br>
-        <strong>Other:</strong> Docker, Google Cloud Platform<br>
+        <strong>Other:</strong> Amazon Web Services<br>
       </p>
       <h4>Work Experience</h4>
       <div>
@@ -56,7 +55,7 @@
             <% for (const title of entry.titles) { %>
               <div class="row">
                 <div class="col-sm fst-italic"><%= title.position %></div>
-                <div class="col-sm-auto"><%= title.start %> &ndash; <%= title.end %></div>
+                <div class="col-sm-auto fst-italic"><%= title.start %> &ndash; <%= title.end %></div>
               </div>
             <% } %>
             <% if (entry.description) { %>
@@ -65,21 +64,23 @@
           </div>
         <% } %>
       </div>
-      <h4>Certifications</h4>
-      <div>
-        <% for (const entry of certifications) { %>
-          <div class="entry">
-            <strong class="col-sm"><%= entry.name %></strong>
-            <div class="row">
-              <div class="col-sm fst-italic"><%= entry.source %></div>
-              <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
+      <% if (certifications.length) { %>
+        <h4>Certifications</h4>
+        <div>
+          <% for (const entry of certifications) { %>
+            <div class="entry">
+              <strong class="col-sm"><%= entry.name %></strong>
+              <div class="row">
+                <div class="col-sm fst-italic"><%= entry.source %></div>
+                <div class="col-sm-auto"><%= entry.start %> &ndash; <%= entry.end %></div>
+              </div>
+              <% if (entry.description) { %>
+                <div class="description"><%= entry.description %></div>
+              <% } %>
             </div>
-            <% if (entry.description) { %>
-              <div class="description"><%= entry.description %></div>
-            <% } %>
-          </div>
-        <% } %>
-      </div>
+          <% } %>
+        </div>
+      <% } %>
       <h4>Open Source Projects</h4>
       <div>
         <% for (const entry of projects) { %>
@@ -93,7 +94,7 @@
           </div>
         <% } %>
       </div>
-      Other open source projects I have written can be found on my <a href="https://github.com/KyleMayes">GitHub profile</a>.
+      Other open source projects I have published can be found on my <a href="https://github.com/KyleMayes">GitHub profile</a>.
     </main>
     <footer class="container-fluid">
       <div>Source on <a href="https://github.com/KyleMayes/kylemayes.com">GitHub</a></div>
